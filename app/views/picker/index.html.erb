@@ -1,0 +1,51 @@
+<h1 style="text-align: center;">Category List</h1>
+
+<div style="display: flex; justify-content: center; align-items: center; height: 70vh; gap:100px;">
+  
+  <div>
+    <div class="slider">
+      <div class="slides">
+      <% slide_index = 0 %>
+      <% @categories.each_with_index do |category, index| %>
+        <% category.subcategories.each do |subcategory| %>
+            <div class="slide">
+              <%= subcategory.name %>
+            </div>
+            <% slide_index += 1 %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="controls" id="select_page">
+      <button id="prev"><</button>
+      <button id="select_index" >1</button>
+      <button id="next">></button>
+    </div>
+    <% total_subcategories = @categories.sum { |cat| cat.subcategories.count } %>
+    <div id="control-container">
+      <input type="range" id="rangeInput" min="1" max="<%= total_subcategories %>"/>
+    </div>
+  </div>
+
+  <div id="wheel-picker-layout">
+    
+    <!-- Center highlight lines -->
+
+    <div id="category-list">
+    <% slide_index = 0 %>
+      <% @categories.each_with_index do |category, index| %>
+        <div class="category-item" data-index="<%= index %>" >
+         <%= category.name %>
+        </div>
+        <% category.subcategories.each do |subcategory| %>
+          <a class="subcategory-item" data-slide-index="<%= slide_index %>" data-name="<%= subcategory.name%>">
+            <%= subcategory.name %>
+          </a>
+          <% slide_index += 1 %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+  
+</div>

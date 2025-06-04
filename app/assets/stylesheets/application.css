@@ -1,0 +1,123 @@
+/*
+ * This is a manifest file that'll be compiled into application.css.
+ *
+ * With Propshaft, assets are served efficiently without preprocessing steps. You can still include
+ * application-wide styles in this file, but keep in mind that CSS precedence will follow the standard
+ * cascading order, meaning styles declared later in the document or manifest will override earlier ones,
+ * depending on specificity.
+ *
+ * Consider organizing styles into separate files for maintainability.
+ */
+
+ body { 
+  background-color: #002bff5e;
+ }
+
+ #category-list {
+  scrollbar-width: thin;
+  scroll-behavior: smooth;
+  padding: 10px; 
+  overflow-y: auto;
+  height: 300px;
+  border: 1px solid #ccc;
+  padding-top: 90px;
+  padding-bottom: 130px;
+  background: #c1e0ff;
+  border-radius: 4px;
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+#category-list div {
+  margin-bottom: 4px;
+}
+
+#category-list > div:first-child {
+  margin-top: 0;
+}
+
+.category-item {
+  margin-bottom: 5px;
+  font-weight: bold; 
+  padding: 5px 0; 
+  text-align: center; 
+  color: #a3a3a3; 
+  font-size: 28px
+}
+
+.center-line1,
+.center-line2 {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 0;
+  border-top: 2px dashed #bbbbbb;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.center-line1 { top: 45%; }
+.center-line2 { top: 55%; }
+
+.subcategory-item.center-highlight {
+  color: #3d3d3d !important;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.subcategory-item{
+  padding-left: 15px; 
+  color: #9b9b9b; 
+  text-align: center; 
+  font-size: 22px;
+  cursor: pointer;
+  display: block;
+}
+
+*{
+    box-sizing: border-box;
+  }
+
+.slider {
+  width: 554px;
+  overflow: hidden;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  width: 550px;
+  flex-shrink: 0;
+  font-size: 20px;
+  padding: 110px;
+  text-align: center;
+  background-color: #64ff94;
+}
+
+.controls {
+  margin-top: 18px;
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 0 10px;
+}
+
+#wheel-picker-layout{
+  width: 550px;
+  position: relative;
+}
+
+#control-container{
+  margin-top:38px;
+  display: none;
+  justify-content: center;
+}
